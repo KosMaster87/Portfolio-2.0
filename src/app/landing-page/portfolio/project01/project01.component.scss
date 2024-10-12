@@ -1,0 +1,291 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.toTheRightSideBox {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+
+  h2 {
+    text-shadow: 4px 3px 20px rgba(0, 0, 0, 0.38);
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.07rem;
+    padding-left: 1rem;
+    width: 100%;
+    max-width: 1440px;
+  }
+}
+
+.mainProjectBox {
+  background-color: rgb(111, 114, 104);
+  width: 100%;
+  max-width: 1440px;
+  height: 400px;
+}
+
+// .project01_Component {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 100%;
+//   max-width: 1440px;
+// }
+
+// .leftsideProjectContainer {
+//   padding: 0px 100px 50px 100px;
+//   display: flex;
+//   position: relative;
+//   max-width: 100vw;
+//   margin-top: -30px;
+// }
+// .leftsideContainer {
+//   display: inline-block;
+//   position: relative;
+//   z-index: 5;
+// }
+
+// .image {
+//   filter: grayscale(100%);
+//   display: block;
+//   width: 620px;
+//   height: 393px;
+//   transition: filter 0.5s ease; /* Übergangseffekt hinzufügen */
+// }
+
+// .leftsideProjectContainer:hover .image {
+//   filter: grayscale(0%);
+// }
+
+// .leftsideBorderContainer {
+//   display: none;
+//   position: absolute;
+//   top: 20px;
+//   left: 20px;
+//   z-index: 10;
+//   width: 620px;
+//   height: 393px;
+//   border: 4px solid #000000;
+//   transition: top 0.3s, left 0.3s; /* Übergang für top und left */
+// }
+
+// .leftsideBorderContainer img {
+//   display: none;
+//   position: absolute;
+//   top: 50%;
+//   right: 0;
+//   margin-right: -36px;
+//   transform-origin: center; /* Drehpunkt in der Mitte des Bildes */
+// }
+
+// .leftsideProjectContainer:hover .leftsideBorderContainer {
+//   display: block;
+// }
+
+// .leftsideProjectContainer:hover .leftsideBorderContainer img {
+//   display: block;
+//   animation: rotateAnimation 0.2s linear forwards; /* Animation für das Bild beim Hover */
+//   z-index: 6;
+// }
+
+// @keyframes rotateAnimation {
+//   from {
+//     transform: rotate(0deg) scale(1); /* Startpunkt: keine Rotation, normale Skalierung */
+//   }
+//   to {
+//     transform: rotate(-130deg) scale(1.5); /* Endpunkt: -130 Grad Rotation, 1.5-fache Skalierung */
+//   }
+// }
+
+// .rightClearContainer {
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: start;
+//   flex-grow: 1;
+//   position: relative;
+// }
+
+// .rightClearContainer .flyInContainer {
+//   position: absolute;
+//   left: -100%;
+//   width: 100%;
+//   height: 100%;
+//   transition: left 0.3s ease;
+//   z-index: 2;
+// }
+
+// .leftsideProjectContainer:hover .rightClearContainer .flyInContainer {
+//   left: 0;
+// }
+
+// .projectNumber {
+//   font-family: Syne;
+//   font-size: 48px;
+//   font-weight: 700;
+//   line-height: 57.6px;
+//   text-align: right;
+//   margin: 0;
+//   margin-right: 20px;
+// }
+
+// .flyInContainer {
+//   display: flex;
+// }
+
+// h2 {
+//   font-family: Syne;
+//   font-size: 45px;
+//   font-weight: 800;
+//   line-height: 45px;
+//   text-align: left;
+//   margin: 0;
+// }
+
+// h3 {
+//   font-family: Overpass;
+//   font-size: 23px;
+//   font-weight: 400;
+//   line-height: 27.6px;
+//   text-align: left;
+//   margin: 0;
+//   color: #00bc8f;
+// }
+
+// .projectText {
+//   font-family: Overpass;
+//   font-size: 16px;
+//   font-weight: 400;
+//   line-height: 19.2px;
+//   text-align: left;
+// }
+
+// .clearContainer {
+//   width: 260px;
+// }
+
+// .textContainer {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: flex-start;
+// }
+
+// button {
+//   padding: 10px 20px 10px 20px;
+//   gap: 87px;
+//   border: 1px 0px 0px 0px;
+//   opacity: 0px;
+//   font-family: Overpass;
+//   font-size: 23px;
+//   font-weight: 400;
+//   line-height: 27.6px;
+//   text-align: left;
+//   background-color: #ffffff;
+//   cursor: pointer;
+// }
+
+// .secondContainer {
+//   display: none;
+// }
+
+// @media (max-width: 1200px) {
+//   .leftsideProjectContainer {
+//     padding: 0px 30px 30px 30px;
+//   }
+//   .leftsideContainer img {
+//     scale: 0.8;
+//   }
+//   .leftsideBorderContainer {
+//     scale: 0.8;
+//   }
+//   .rightClearContainer .flyInContainer {
+//     left: -120%;
+//   }
+//   .clearContainer {
+//     width: 0px;
+//   }
+// }
+// @media (max-width: 960px) {
+//   .image {
+//     filter: grayscale(0%);
+//   }
+//   .rightClearContainer {
+//     display: none;
+//   }
+//   .leftsideContainer {
+//     display: none;
+//   }
+//   .secondContainer {
+//     display: flex;
+//     flex-direction: column;
+//     width: 450px;
+//     > img {
+//       width: 450px;
+//       padding: 30px 0px 30px 0px;
+//     }
+//   }
+
+//   .leftsideProjectContainer {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+//   .leftsideProjectContainer:hover .leftsideBorderContainer {
+//     display: none;
+//   }
+//   .leftsideProjectContainer:hover .leftsideBorderContainer img {
+//     display: none;
+//   }
+//   h2 {
+//     font-size: 35px;
+//   }
+// }
+
+// @media (max-width: 550px) {
+//   .leftsideProjectContainer {
+//     margin-top: -70px;
+//   }
+//   .leftsideContainer img {
+//     scale: 0.6;
+//   }
+//   .leftsideBorderContainer {
+//     scale: 0.6;
+//   }
+//   .secondContainer {
+//     display: flex;
+//     width: 300px;
+//     > img {
+//       width: 300px;
+//       padding: 60px 0px 30px 0px;
+//     }
+//   }
+//   .leftsideContainer {
+//     height: 400px;
+//   }
+//   .projectNumber {
+//     font-size: 35px;
+//   }
+// }
+
+// @media (max-width: 420px) {
+//   .leftsideProjectContainer {
+//     margin-top: -90px;
+//   }
+//   .leftsideContainer img {
+//     scale: 0.5;
+//   }
+//   .leftsideContainer {
+//     height: 300px;
+//   }
+//   .leftsideBorderContainer {
+//     scale: 0.5;
+//   }
+//   .secondContainer {
+//     > img {
+//       padding: 90px 0px 30px 0px;
+//     }
+//   }
+// }
