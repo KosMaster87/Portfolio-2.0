@@ -7,7 +7,6 @@ section {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  // background-color: rgb(255, 252, 242);
   background-color: coral;
   flex-direction: column;
   gap: 4rem;
@@ -16,7 +15,6 @@ section {
 .landingPage_firstSector {
   display: flex;
   flex-direction: column;
-  // border: 1px solid rgb(16, 132, 49);
 }
 
 .landingPage_Headline_Box {
@@ -67,7 +65,6 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  // border: 1px solid red;
   width: 80%;
   height: 20vw;
 
@@ -99,7 +96,6 @@ section {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  // outline: 1px red solid;
   width: 80%;
   height: 20vh;
   margin-bottom: 50px;
@@ -127,7 +123,6 @@ section {
 
     a {
       text-decoration: none;
-      // letter-spacing: -0.09rem;
       color: rgb(55, 53, 53);
     }
   }

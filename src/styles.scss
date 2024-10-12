@@ -3,11 +3,12 @@
 @import "./../src/assets/styles/overpass.scss";
 
 :root {
-  --padding-small: clamp(40px, 10px, 10px);
-  --padding-medium: clamp(100px, 10vw, 160px);
-  --padding-large: clamp(160px, 15vw, 200px);
-  --padding-larger: clamp(160px, 15vw, 200px);
-  --gap: clamp(10px, 2.5vw, 20px);
+  --padding-smaller: clamp(20px, 0.2rem, 10px);
+  --padding-small: clamp(40px, 0.2rem, 10px);
+  --padding-medium: clamp(100px, 6.25rem, 160px);
+  --gap-smaller: clamp(2px, 0.2rem, 20px);
+  --gap-small: clamp(6px, 0.2rem, 20px);
+  --gap-medium: clamp(10px, 2rem, 20px);
 }
 
 * {

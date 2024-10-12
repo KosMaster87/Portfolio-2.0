@@ -1,5 +1,6 @@
 .headerSelfInner {
   // background-color: rgb(255, 252, 242);
+  background-color: darkkhaki;
   border-bottom: 1px solid rgb(0, 188, 143);
   display: flex;
   align-items: center;
@@ -8,7 +9,13 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 10vw;
+  padding: 0 9rem;
+}
+
+@media screen and (max-width: 750px) {
+  .headerSelfInner {
+    padding: 0 2rem;
+  }
 }
 
 .navLeft {
@@ -25,14 +32,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // gap: 1rem;
 }
 
 .navBarSelf {
   display: flex;
   align-items: center;
   justify-content: center;
-  // width: 50vw;
   gap: 1rem;
 }
 
