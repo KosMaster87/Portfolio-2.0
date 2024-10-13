@@ -15,7 +15,7 @@ section {
   grid-template-rows: min-content min-content 1fr 1fr;
 
   grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-row-gap: 1rem;
 
   grid-template-areas:
     " . header . "
