@@ -37,11 +37,11 @@ section {
 
   img {
     flex: 1;
-    max-height: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     width: calc(50% - 10px);
     border-radius: 5px;
+    object-fit: cover; /* Stellt sicher, dass das Bild das Seitenverhältnis beibehält */
+    aspect-ratio: 16 / 9; /* Erzwingt ein 16:9-Verhältnis */
   }
 
   .transparentDiv {
@@ -72,7 +72,7 @@ section {
   z-index: 10;
 
   border-radius: 5px;
-  // background-color: rgba(149, 94, 131, 0.314);
+
   width: 100% !important;
   max-width: 1440px;
   min-height: 300px;
@@ -90,8 +90,9 @@ section {
   .rectangle {
     flex: 1;
     max-height: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+
+    aspect-ratio: 16 / 9;
     width: calc(50% - 10px);
     border-radius: 5px;
 
@@ -109,13 +110,12 @@ section {
     align-items: center;
     justify-content: center;
 
-    flex-direction: column;
+    border-radius: 5px;
+    border: 4px solid rgb(143, 61, 61);
 
-    // background-color: rgba(161, 202, 89, 0.376);
+    flex-direction: column;
   }
 }
-
-
 
 // .project01_Component {
 //   display: flex;
