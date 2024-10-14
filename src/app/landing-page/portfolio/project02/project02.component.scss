@@ -170,9 +170,12 @@ section {
   align-items: flex-start;
   justify-content: flex-end;
   flex-direction: column;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: transform 0.5s ease 0.6s, opacity 0.5s ease 0.6s;
+  // transform: translateX(100%);
+  // opacity: 0;
+  // transition: transform 0.5s ease 0.6s, opacity 0.5s ease 0.6s;
+  transform: translateX(0);
+  opacity: 1;
+  transition: none;
 
   &:hover {
     transform: translateX(0);
@@ -199,18 +202,24 @@ section {
   gap: 0.5rem;
 
   h2 {
+    font-size: clamp(28px, 1.5vw + 1.5rem, 50px);
     color: rgb(22, 21, 21);
     font-weight: 800;
+    white-space: nowrap;
   }
 
   h3 {
-    font-size: 16px;
+    font-size: clamp(12px, 1vw + 0.5rem, 23px);
     font-weight: 400;
+    white-space: nowrap;
     color: rgb(0, 188, 143);
   }
 
   p {
-    font-size: 16px;
+    font-size: clamp(12px, 1vw + 0.2rem, 40px);
+    font-weight: 400;
+    text-wrap: balance;
+    max-width: 40ch;
   }
 
   .btnBox {
