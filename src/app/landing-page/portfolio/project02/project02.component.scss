@@ -216,7 +216,7 @@ section {
   }
 
   p {
-    font-size: clamp(12px, 1vw + 0.2rem, 40px);
+    font-size: clamp(12px, 1vw + 0.2rem, 18px);
     font-weight: 400;
     text-wrap: balance;
     max-width: 40ch;
@@ -252,8 +252,27 @@ button {
   }
 }
 
-@media screen and (max-width: 1080px) and (orientation: landscape) {
+/* Für Handys im Portrait-Modus */
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  /* Anpassungen für Handys im Hochformat */
 }
 
-@media screen and (max-width: 600px) and (orientation: portrait) {
+/* Für Handys im Landscape-Modus */
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  /* Anpassungen für Handys im Querformat */
+}
+
+/* Für Tablets im Portrait-Modus */
+@media screen and (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Anpassungen für Tablets im Hochformat */
+}
+
+/* Für Tablets im Landscape-Modus */
+@media screen and (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Anpassungen für Tablets im Querformat */
+}
+
+/* Für Desktops und größere Bildschirme (ab 1024px) */
+@media screen and (min-width: 1024px) {
+  /* Anpassungen für Desktops und größere Geräte */
 }
