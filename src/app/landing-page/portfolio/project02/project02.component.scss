@@ -252,27 +252,18 @@ button {
   }
 }
 
-/* Für Handys im Portrait-Modus */
-@media screen and (max-width: 600px) and (orientation: portrait) {
-  /* Anpassungen für Handys im Hochformat */
+@media screen and (max-width: 720px) and (orientation: portrait) {
+
 }
 
-/* Für Handys im Landscape-Modus */
-@media screen and (max-width: 600px) and (orientation: landscape) {
-  /* Anpassungen für Handys im Querformat */
+@media screen and (max-width: 720px) and (orientation: landscape) {
 }
 
-/* Für Tablets im Portrait-Modus */
-@media screen and (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
-  /* Anpassungen für Tablets im Hochformat */
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
 }
 
-/* Für Tablets im Landscape-Modus */
-@media screen and (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
-  /* Anpassungen für Tablets im Querformat */
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
 }
 
-/* Für Desktops und größere Bildschirme (ab 1024px) */
-@media screen and (min-width: 1024px) {
-  /* Anpassungen für Desktops und größere Geräte */
+@media screen and (min-width: 1025px) {
 }

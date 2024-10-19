@@ -1,5 +1,5 @@
 section {
-  height: 100mvh;
+  height: 100dvh;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -53,7 +53,6 @@ app-project02 {
   grid-area: project02;
 }
 
-/* Für Handys im Portrait-Modus */
 @media screen and (max-width: 720px) and (orientation: portrait) {
   section {
     grid-template-columns: 80%;
@@ -70,7 +69,6 @@ app-project02 {
   }
 }
 
-/* Für Handys im Landscape-Modus */
 @media screen and (max-width: 720px) and (orientation: landscape) {
   section {
     margin-top: 4rem;
@@ -88,11 +86,9 @@ app-project02 {
   }
 }
 
-/* Für Tablets im Portrait-Modus */
 @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
 }
 
-/* Für Tablets im Landscape-Modus */
 @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
   section {
     margin-top: 4rem;
@@ -110,6 +106,5 @@ app-project02 {
   }
 }
 
-/* Für Desktops und größere Bildschirme (ab 1024px) */
 @media screen and (min-width: 1025px) {
 }
