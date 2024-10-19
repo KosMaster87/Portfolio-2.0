@@ -168,12 +168,12 @@ section {
   align-items: flex-start;
   justify-content: flex-end;
   flex-direction: column;
-  // transform: translateX(-100%);
-  // opacity: 0;
-  // transition: transform 0.5s ease 0.6s, opacity 0.5s ease 0.6s;
-  transform: translateX(0);
-  opacity: 1;
-  transition: none;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.5s ease 0.6s, opacity 0.5s ease 0.6s;
+  // transform: translateX(0);
+  // opacity: 1;
+  // transition: none;
 
   &:hover {
     transform: translateX(0);
@@ -276,7 +276,7 @@ button {
     max-width: unset;
     min-height: unset;
     max-height: unset;
-    // background-color: rgb(50, 167,c 128);
+    background-color: rgba(15, 42, 92, 0.536);
 
     .rectangle {
       flex: 1;
@@ -294,9 +294,10 @@ button {
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      padding-left: 0.5rem;
+      padding-left: 0;
+      padding-bottom: 0;
       aspect-ratio: 16 / 9;
-      
+
       // transform: translateY(-100%);
       // opacity: 0;
       // transition: transform 0.5s ease 0.6s, opacity 0.5s ease 0.6s;
@@ -304,8 +305,6 @@ button {
       opacity: 1;
       transition: none;
 
-      // background-color: rgba(171, 130, 80, 0.719);
-      border-radius: 5px;
       outline: 2px solid darkgreen;
 
       &:hover {
@@ -338,6 +337,14 @@ button {
       gap: 0.5rem;
     }
   }
+
+  .hoverArrow {
+    transform: translate(-35%, -40%) rotate(45deg);
+  }
+
+  .rectangle:hover .hoverArrow {
+    transform: translate(-35%, -40%) rotate(175deg) scale(1.5);
+  }
 }
 
 @media screen and (max-width: 720px) and (orientation: landscape) {
@@ -351,3 +358,23 @@ button {
 
 @media screen and (min-width: 1025px) {
 }
+
+// img:empty {
+//   display: none;
+// }
+
+// img {
+//   display: block;
+//   width: 100px; /* Größe festlegen */
+//   height: 100px;
+// }
+
+// img:not([src]) {
+//   visibility: hidden;
+// }
+
+// img[src=""] {
+// content: url('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs='); /* Transparentes 1x1 Bild */
+
+//   visibility: hidden;
+// }
