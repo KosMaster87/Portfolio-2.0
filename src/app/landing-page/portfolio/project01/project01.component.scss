@@ -168,15 +168,15 @@ section {
   align-items: flex-start;
   justify-content: flex-end;
   flex-direction: column;
-  // transform: translateY(-100%);
-  // opacity: 0;
-  // transition: transform 0.5s ease 0.6s, opacity 0.5s ease 0.6s;
-  transform: translateX(0);
-  opacity: 1;
-  transition: none;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.5s ease 0.6s, opacity 0.5s ease 0.6s;
+  // transform: translateX(0);
+  // opacity: 1;
+  // transition: none;
 
   &:hover {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -263,19 +263,20 @@ button {
     img {
       flex: 1;
       width: 100%;
+
       min-height: 200px;
-      height: calc(50% - 10px);
+      height: 100%;
+
       object-fit: contain;
       background-color: brown;
     }
 
     .transparentDiv {
       flex: 1;
-      min-height: 200px;
-      height: calc(50% - 10px);
-
       width: 100%;
-      max-width: unset;
+
+      min-height: 200px;
+      height: 100%;
 
       background-color: rgba(128, 155, 102, 0.737);
       pointer-events: unset;
@@ -291,27 +292,40 @@ button {
     min-height: unset;
     max-height: unset;
     background-color: rgb(50, 167, 128);
-  }
 
-  .rectangle {
-    flex: 1;
-    width: 100%;
-    max-height: 100%;
-    height: auto;
-  }
+    .rectangle {
+      flex: 1;
+      width: 100%;
+      max-height: 100%;
+      height: auto;
+    }
 
-  .infoBox {
-    flex: 1;
-    width: 100%;
-    max-height: 100%;
-    height: auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    padding-left: 0.5rem;
-    background-color: rgba(171, 130, 80, 0.719);
-    border-radius: 5px;
+    .infoBox {
+      flex: 1;
+      width: 100%;
+      max-height: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 0.5rem;
+      background-color: rgba(171, 130, 80, 0.719);
+      border-radius: 5px;
+
+      aspect-ratio: 16 / 9;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.5s ease 0.6s, opacity 0.5s ease 0.6s;
+      // transform: translateY(0);
+      // opacity: 1;
+      // transition: none;
+
+      &:hover {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   }
 
   .innerBox {
