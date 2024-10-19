@@ -200,7 +200,7 @@ section {
   gap: 0.5rem;
 
   h2 {
-    font-size: clamp(28px, 1.5vw + 1.5rem, 50px);
+    font-size: clamp(28px, 1vw + 1.3rem, 50px);
     color: rgb(22, 21, 21);
     font-weight: 800;
     white-space: nowrap;
@@ -295,7 +295,7 @@ button {
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      padding-left: 0;
+      padding-right: 0;
       padding-bottom: 0;
       aspect-ratio: 16 / 9;
 
@@ -316,7 +316,7 @@ button {
   }
 
   .innerBox {
-    padding-left: 0;
+    padding-right: 0;
     padding-bottom: 0;
     gap: 0.2rem;
 
