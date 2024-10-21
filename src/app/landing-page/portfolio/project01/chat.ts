@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
-
 import {
   Component,
+  ViewChild,
   ElementRef,
   AfterViewInit,
   OnDestroy,
@@ -23,7 +23,6 @@ import {
   imports: [CommonModule],
   templateUrl: "./project01.component.html",
   styleUrls: ["./project01.component.scss"],
-
   animations: [
     trigger("fadeInOut_Ng", [
       state("in", style({ opacity: 1 })),
@@ -33,42 +32,42 @@ import {
   ],
 })
 export class Project01Component implements AfterViewInit, OnDestroy {
-  private rectangleRef!: HTMLElement | null;
-  private hoverArrowRef!: HTMLElement | null;
-  private infoBoxRef!: HTMLElement | null;
+  @ViewChild("rectangleRef", { static: false })
+  rectangleRef!: ElementRef<HTMLElement>;
+  @ViewChild("hoverArrowRef", { static: false })
+  hoverArrowRef!: ElementRef<HTMLElement>;
+  @ViewChild("infoBoxRef", { static: false })
+  infoBoxRef!: ElementRef<HTMLElement>;
 
   private subscription: Subscription | undefined;
   public isVisible = false;
 
   constructor(
-    private el: ElementRef,
     private viewportService: ViewportService,
     private cdr: ChangeDetectorRef
   ) {}
 
-  /**
-   * Die Animationen durch Angular und einge vanilla CSS.
-   */
   ngAfterViewInit() {
-    this.rectangleRef = this.el.nativeElement.querySelector(".rectangle");
-    this.hoverArrowRef = this.el.nativeElement.querySelector(".hoverArrow");
-    this.infoBoxRef = this.el.nativeElement.querySelector(".infoBox");
+    // Überprüfung, ob die Referenzen korrekt sind
+    console.log(this.rectangleRef.nativeElement);
+    console.log(this.hoverArrowRef.nativeElement);
+    console.log(this.infoBoxRef.nativeElement);
 
     this.subscription = this.viewportService
-      .observeElement(this.el.nativeElement)
-
+      .observeElement(this.rectangleRef.nativeElement)
       .subscribe((isVisible) => {
         console.log("Element sichtbar:", isVisible);
         this.isVisible = isVisible;
 
+        // Die Klasse 'active' auf die spezifischen Elemente anwenden
         if (isVisible) {
-          this.rectangleRef?.classList.add("active");
-          this.hoverArrowRef?.classList.add("active");
-          this.infoBoxRef?.classList.add("active");
+          this.rectangleRef.nativeElement.classList.add("active");
+          this.hoverArrowRef.nativeElement.classList.add("active");
+          this.infoBoxRef.nativeElement.classList.add("active");
         } else {
-          this.rectangleRef?.classList.remove("active");
-          this.hoverArrowRef?.classList.remove("active");
-          this.infoBoxRef?.classList.remove("active");
+          this.rectangleRef.nativeElement.classList.remove("active");
+          this.hoverArrowRef.nativeElement.classList.remove("active");
+          this.infoBoxRef.nativeElement.classList.remove("active");
         }
 
         this.cdr.detectChanges();
