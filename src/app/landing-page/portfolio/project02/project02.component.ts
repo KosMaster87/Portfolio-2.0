@@ -1,80 +1,4 @@
-// import { CommonModule } from "@angular/common";
-// import {
-//   Component,
-//   ElementRef,
-//   AfterViewInit,
-//   OnDestroy,
-//   ChangeDetectorRef,
-// } from "@angular/core";
-// import { Subscription } from "rxjs";
-// import { ViewportService } from "./../../../shared/viewport-service.service";
-// import {
-//   slideInOutLeft,
-//   slideInOutRight,
-//   slideInOutLeftTop,
-//   slideInOutRightTop,
-//   slideInFromBottom,
-//   slideInFromBottomTwo,
-//   slideInFromBottomThree,
-//   fromBackground,
-// } from "./../../../../app/shared/animation";
-// import { TranslateModule } from "@ngx-translate/core";
-// @Component({
-//   selector: "app-project02",
-//   standalone: true,
-//   imports: [TranslateModule],
-//   templateUrl: "./project02.component.html",
-//   styleUrl: "./project02.component.scss",
-//   animations: [
-//     slideInOutLeft,
-//     slideInOutRight,
-//     slideInOutLeftTop,
-//     slideInOutRightTop,
-//     slideInFromBottom,
-//     slideInFromBottomTwo,
-//     slideInFromBottomThree,
-//     fromBackground,
-//   ],
-// })
-// export class Project02Component implements AfterViewInit, OnDestroy {
-//   slideInLeft = "out";
-//   slideInRight = "out";
-//   slideInLeftTop = "out";
-//   slideInRightTop = "out";
-//   slideInBottom: string = "out";
-//   slideInFromBottomTwo: string = "out";
-//   slideInFromBottomThree: string = "out";
-//   fromBackground: string = "out";
-//   private subscription: Subscription | undefined;
-
-//   constructor(
-//     private el: ElementRef,
-//     private viewportService: ViewportService,
-//     private cdr: ChangeDetectorRef
-//   ) {}
-
-//   ngAfterViewInit() {
-//     this.subscription = this.viewportService
-//       .observeElement(this.el.nativeElement)
-//       .subscribe((isIntersecting) => {
-//         this.slideInRight = isIntersecting ? "in" : "out";
-//         this.slideInLeft = isIntersecting ? "in" : "out";
-//         this.slideInRightTop = isIntersecting ? "in" : "out";
-//         this.slideInLeftTop = isIntersecting ? "in" : "out";
-//         this.slideInBottom = isIntersecting ? "in" : "out";
-//         this.slideInFromBottomTwo = isIntersecting ? "in" : "out";
-//         this.slideInFromBottomThree = isIntersecting ? "in" : "out";
-//         this.fromBackground = isIntersecting ? "in" : "out";
-//         this.cdr.detectChanges();
-//       });
-//   }
-
-//   ngOnDestroy() {
-//     if (this.subscription) {
-//       this.subscription.unsubscribe();
-//     }
-//   }
-// }
+import { CommonModule } from "@angular/common";
 
 import {
   Component,
@@ -85,32 +9,80 @@ import {
 } from "@angular/core";
 import { Subscription } from "rxjs";
 import { ViewportService } from "./../../../shared/viewport-service.service";
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from "@angular/animations";
 
 @Component({
   selector: "app-project02",
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: "./project02.component.html",
   styleUrl: "./project02.component.scss",
+
+  animations: [
+    trigger("fadeInOut_Ng", [
+      state("in", style({ opacity: 1 })),
+      transition(":enter", [style({ opacity: 0 }), animate(1200)]),
+      transition(":leave", [animate(300, style({ opacity: 0 }))]),
+    ]),
+  ],
 })
 export class Project02Component implements AfterViewInit, OnDestroy {
   private subscription: Subscription | undefined;
+  public isVisible = false;
 
+  // Referenzen zu den spezifischen Elementen
+  // private rectangleRef: ElementRef<HTMLDivElement>;
+  // private hoverArrowRef: ElementRef<HTMLDivElement>;
+  // private infoBoxRef: ElementRef<HTMLDivElement>;
+  private rectangleRef: HTMLElement | null;
+  private hoverArrowRef: HTMLElement | null;
+  private infoBoxRef: HTMLElement | null;
+
+  /**
+   * Componenten eigens interne.
+   * @param el
+   * @param viewportService
+   * @param cdr
+   */
   constructor(
     private el: ElementRef,
     private viewportService: ViewportService,
     private cdr: ChangeDetectorRef
-  ) {}
+  ) {
+    // Hier die Referenzen initialisieren
+    this.rectangleRef = el.nativeElement.querySelector(".rectangle");
+    this.hoverArrowRef = el.nativeElement.querySelector(".hoverArrow");
+    this.infoBoxRef = el.nativeElement.querySelector(".infoBox");
+  }
 
+  /**
+   * Die Animationen durch Angular und einge vanilla CSS.
+   */
   ngAfterViewInit() {
     this.subscription = this.viewportService
       .observeElement(this.el.nativeElement)
+
       .subscribe((isVisible) => {
+        console.log("Element sichtbar:", isVisible);
+        this.isVisible = isVisible;
+
+        // Die Klasse 'active' auf die spezifischen Elemente anwenden
         if (isVisible) {
-          this.el.nativeElement.classList.add("active");
+          this.rectangleRef?.classList.add("active");
+          this.hoverArrowRef?.classList.add("active");
+          this.infoBoxRef?.classList.add("active");
         } else {
-          this.el.nativeElement.classList.remove("active");
+          this.rectangleRef?.classList.remove("active");
+          this.hoverArrowRef?.classList.remove("active");
+          this.infoBoxRef?.classList.remove("active");
         }
+
         this.cdr.detectChanges();
       });
   }

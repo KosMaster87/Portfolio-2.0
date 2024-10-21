@@ -1,29 +1,3 @@
-// import { Injectable, NgZone } from '@angular/core';
-// import { Observable, fromEventPattern } from 'rxjs';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class ViewportService {
-//   constructor(private ngZone: NgZone) {}
-
-//   observeElement(element: HTMLElement): Observable<boolean> {
-//     return new Observable(observer => {
-//       const intersectionObserver = new IntersectionObserver((entries) => {
-//         this.ngZone.run(() => {
-//           entries.forEach(entry => observer.next(entry.isIntersecting));
-//         });
-//       }, {
-//         threshold: [0.1, 0.9]
-//       });
-
-//       intersectionObserver.observe(element);
-
-//       return () => intersectionObserver.disconnect();
-//     });
-//   }
-// }
-
 import { Injectable } from "@angular/core";
 import { fromEvent, Observable } from "rxjs";
 import { map } from "rxjs/operators";
@@ -32,6 +6,11 @@ import { map } from "rxjs/operators";
   providedIn: "root",
 })
 export class ViewportService {
+  /**
+   * Soll beim erreichen des viewports mit einer Animatition getriggert werden.
+   * @param element Das zu animierende Element.
+   * @returns
+   */
   observeElement(element: HTMLElement): Observable<boolean> {
     return fromEvent(window, "scroll").pipe(
       map(() => {

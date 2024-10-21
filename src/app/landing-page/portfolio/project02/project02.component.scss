@@ -181,15 +181,18 @@ section {
   }
 }
 
+//  SOLL
 // .rectangle:hover + .infoBox {
 //   transform: translateX(0);
 //   opacity: 1;
 //   transition-delay: 0.9s;
 // }
 
+// IST
 .mainProjectBox:hover .infoBox {
   transform: translateX(0);
   opacity: 1;
+  transition-delay: 0.5s;
 }
 
 .innerBox {

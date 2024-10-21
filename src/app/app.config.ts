@@ -11,9 +11,10 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimations(),
     provideRouter(routes),
-    provideClientHydration(),
+    provideClientHydration(), // Server-Side Rendering 
     provideHttpClient(),
     importProvidersFrom(HttpClientModule),
+
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
@@ -23,6 +24,7 @@ export const appConfig: ApplicationConfig = {
         },
       })
     ),
+
   ],
 };
 

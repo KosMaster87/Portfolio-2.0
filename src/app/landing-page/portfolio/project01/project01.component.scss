@@ -102,11 +102,11 @@ section {
   border: 4px solid transparent;
   transition: transform 1s ease, border 1s ease, opacity 0.7s ease;
 
-  // &:hover {
-  //   animation: slideIn 1s ease forwards;
-  //   border: 4px solid black;
-  //   transform: scale(1.05);
-  // }
+  &:hover {
+    animation: slideIn 1s ease forwards;
+    border: 4px solid black;
+    transform: scale(1.05);
+  }
 
   .rectangle.active {
     animation: slideIn 1s ease forwards;
@@ -159,13 +159,13 @@ section {
   opacity: 0;
 }
 
-// .rectangle:hover .hoverArrow {
-//   transform: translate(-35%, -40%) rotate(0deg) scale(1.5);
-//   opacity: 1;
-// }
+.rectangle:hover .hoverArrow {
+  transform: translate(-35%, -40%) rotate(0deg) scale(1.5);
+  opacity: 1;
+}
 
 .rectangle.active .hoverArrow {
-  transform: translate(-55%, -40%) rotate(270deg) scale(1.5);
+  transform: translate(-35%, -40%) rotate(0deg) scale(1.5);
   opacity: 1;
 }
 
@@ -186,10 +186,10 @@ section {
   // opacity: 1;
   // transition: none;
 
-  // &:hover {
-  //   transform: translateX(0);
-  //   opacity: 1;
-  // }
+  &:hover {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
   .infoBox.active {
     transform: translateX(0);
@@ -197,16 +197,18 @@ section {
   }
 }
 
-// .rectangle:hover + .infoBox {
-//   transform: translateX(0);
-//   opacity: 1;
-//   transition-delay: 0.9s;
-// }
-
-.mainProjectBox:hover .infoBox {
+// SOLL
+.rectangle:hover + .infoBox {
   transform: translateX(0);
   opacity: 1;
+  transition-delay: 0.5s;
 }
+
+// Siehe Projekt 2
+// .mainProjectBox:hover .infoBox {
+//   transform: translateX(0);
+//   opacity: 1;
+// }
 
 .innerBox {
   padding-left: 2.5rem;
@@ -260,6 +262,7 @@ button {
   cursor: pointer;
 
   &:hover {
+    background-color: rgb(0, 188, 143);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: white;
   }
@@ -480,23 +483,3 @@ button {
 
 @media screen and (min-width: 1025px) {
 }
-
-// img:empty {
-//   display: none;
-// }
-
-// img {
-//   display: block;
-//   width: 100px; /* Größe festlegen */
-//   height: 100px;
-// }
-
-// img:not([src]) {
-//   visibility: hidden;
-// }
-
-// img[src=""] {
-// content: url('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs='); /* Transparentes 1x1 Bild */
-
-//   visibility: hidden;
-// }
