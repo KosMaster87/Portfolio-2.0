@@ -31,7 +31,7 @@ import {
   ],
 })
 export class ProjectComponent implements AfterViewInit {
-  public isVisible = false;
+  public isVisible = true;
 
   constructor(private el: ElementRef, private cdr: ChangeDetectorRef) {}
 

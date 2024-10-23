@@ -1,4 +1,5 @@
-<section *ngIf="isVisible" [@fadeInOut]>
+<!-- <section *ngIf="isVisible" [@fadeInOut]> -->
+<section>
   <div class="toTheRightSideBox">
     <div class="blancoBox"></div>
     <div class="h2Box">
@@ -14,13 +15,13 @@
       <div
         class="rectangle"
         id="rectangle"
-        [ngClass]="{ active: isVisible }"
+        [class.active]="isVisible"
         #rectangleRef
       >
         <div
           class="hoverArrow"
           id="hoverArrow"
-          [ngClass]="{ active: isVisible }"
+          [class.active]="isVisible"
           #hoverArrowRef
         ></div>
       </div>
@@ -28,7 +29,7 @@
       <div
         class="infoBox"
         id="infoBox"
-        [ngClass]="{ active: isVisible }"
+        [class.active]="isVisible"
         #infoBoxRef
       >
         <div class="innerBox">
