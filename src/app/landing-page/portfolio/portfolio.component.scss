@@ -10,7 +10,8 @@ section {
 
   display: grid;
   grid-template-columns: 1fr 80% 1fr;
-  grid-template-rows: min-content min-content 1fr 1fr;
+  grid-template-rows: min-content min-content 1fr;
+  // grid-template-rows: min-content min-content 1fr 1fr;
 
   grid-column-gap: 0px;
   grid-row-gap: 0rem;
@@ -18,8 +19,13 @@ section {
   grid-template-areas:
     " . header . "
     " . text . "
-    " . project01 . "
-    " . project02 . ";
+    " . project . ";
+
+  // grid-template-areas:
+  //   " . header . "
+  //   " . text . "
+  //   " . project01 . "
+  //   " . project02 . ";
 
   h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -43,18 +49,23 @@ section {
   }
 }
 
-app-project01 {
-  grid-area: project01;
+app-project {
+  grid-area: project;
 }
 
-app-project02 {
-  grid-area: project02;
-}
+// app-project01 {
+//   grid-area: project01;
+// }
+
+// app-project02 {
+//   grid-area: project02;
+// }
 
 @media screen and (max-width: 720px) and (orientation: portrait) {
   section {
     grid-template-columns: 80%;
-    grid-template-rows: min-content min-content 1fr 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    // grid-template-rows: min-content min-content 1fr 1fr;
 
     grid-column-gap: 0px;
     grid-row-gap: 0rem;
@@ -62,8 +73,13 @@ app-project02 {
     grid-template-areas:
       " header "
       " text "
-      " project01 "
-      " project02 ";
+      " project ";
+
+    // grid-template-areas:
+    //   " header "
+    //   " text "
+    //   " project01 "
+    //   " project02 ";
   }
 }
 
@@ -71,7 +87,8 @@ app-project02 {
   section {
     margin-top: 4rem;
     grid-template-columns: 80%;
-    grid-template-rows: min-content min-content 1fr 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    // grid-template-rows: min-content min-content 1fr 1fr;
 
     grid-column-gap: 0px;
     grid-row-gap: 0rem;
@@ -79,8 +96,13 @@ app-project02 {
     grid-template-areas:
       " header "
       " text "
-      " project01 "
-      " project02 ";
+      " project ";
+
+    // grid-template-areas:
+    //   " header "
+    //   " text "
+    //   " project01 "
+    //   " project02 ";
   }
 }
 
@@ -91,7 +113,8 @@ app-project02 {
   section {
     margin-top: 4rem;
     grid-template-columns: 80%;
-    grid-template-rows: min-content min-content 1fr 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    // grid-template-rows: min-content min-content 1fr 1fr;
 
     grid-column-gap: 0px;
     grid-row-gap: 0rem;
@@ -99,8 +122,13 @@ app-project02 {
     grid-template-areas:
       " header "
       " text "
-      " project01 "
-      " project02 ";
+      " project ";
+
+    // grid-template-areas:
+    //   " header "
+    //   " text "
+    //   " project01 "
+    //   " project02 ";
   }
 }
 

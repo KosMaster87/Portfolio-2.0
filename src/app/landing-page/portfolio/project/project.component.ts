@@ -2,10 +2,11 @@ import { CommonModule } from "@angular/common";
 
 import {
   Component,
-  ElementRef,
   AfterViewInit,
+  ElementRef,
   ChangeDetectorRef,
 } from "@angular/core";
+
 import {
   trigger,
   state,
@@ -15,39 +16,36 @@ import {
 } from "@angular/animations";
 
 @Component({
-  selector: "app-project02",
+  selector: "app-project",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: "./project02.component.html",
-  styleUrl: "./project02.component.scss",
+  templateUrl: "./project.component.html",
+  styleUrls: ["./project.component.scss"],
 
   animations: [
-    trigger("fadeInOut_Ng", [
+    trigger("fadeInOut", [
       state("in", style({ opacity: 1 })),
       transition(":enter", [style({ opacity: 0 }), animate(1200)]),
       transition(":leave", [animate(300, style({ opacity: 0 }))]),
     ]),
   ],
 })
-export class Project02Component implements AfterViewInit {
+export class ProjectComponent implements AfterViewInit {
   public isVisible = false;
 
-  constructor(
-    private el: ElementRef,
-    private cdr: ChangeDetectorRef
-  ) {}
+  constructor(private el: ElementRef, private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           this.isVisible = entry.isIntersecting;
-          this.cdr.detectChanges(); // Wichtig, um die Änderungen sofort an Angular weiterzugeben
+          this.cdr.detectChanges();
         });
       },
       { threshold: 0.1 }
-    ); // 10% des Elements müssen sichtbar sein, um als sichtbar zu gelten
+    );
 
-    observer.observe(this.el.nativeElement); // Beobachte das Haupt-Element
+    observer.observe(this.el.nativeElement);
   }
 }

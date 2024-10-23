@@ -4,11 +4,9 @@ import {
   Component,
   ElementRef,
   AfterViewInit,
-  OnDestroy,
   ChangeDetectorRef,
 } from "@angular/core";
-import { Subscription } from "rxjs";
-import { ViewportService } from "./../../../shared/viewport-service.service";
+
 import {
   trigger,
   state,
@@ -32,52 +30,25 @@ import {
     ]),
   ],
 })
-export class Project01Component implements AfterViewInit, OnDestroy {
-  private rectangleRef!: HTMLElement | null;
-  private hoverArrowRef!: HTMLElement | null;
-  private infoBoxRef!: HTMLElement | null;
-
-  private subscription: Subscription | undefined;
+export class Project01Component implements AfterViewInit {
   public isVisible = false;
 
   constructor(
     private el: ElementRef,
-    private viewportService: ViewportService,
     private cdr: ChangeDetectorRef
   ) {}
 
-  /**
-   * Die Animationen durch Angular und einge vanilla CSS.
-   */
   ngAfterViewInit() {
-    this.rectangleRef = this.el.nativeElement.querySelector(".rectangle");
-    this.hoverArrowRef = this.el.nativeElement.querySelector(".hoverArrow");
-    this.infoBoxRef = this.el.nativeElement.querySelector(".infoBox");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          this.isVisible = entry.isIntersecting;
+          this.cdr.detectChanges(); // Wichtig, um die Änderungen sofort an Angular weiterzugeben
+        });
+      },
+      { threshold: 0.5 }
+    ); // 10% des Elements müssen sichtbar sein, um als sichtbar zu gelten
 
-    this.subscription = this.viewportService
-      .observeElement(this.el.nativeElement)
-
-      .subscribe((isVisible) => {
-        console.log("Element sichtbar:", isVisible);
-        this.isVisible = isVisible;
-
-        if (isVisible) {
-          this.rectangleRef?.classList.add("active");
-          this.hoverArrowRef?.classList.add("active");
-          this.infoBoxRef?.classList.add("active");
-        } else {
-          this.rectangleRef?.classList.remove("active");
-          this.hoverArrowRef?.classList.remove("active");
-          this.infoBoxRef?.classList.remove("active");
-        }
-
-        this.cdr.detectChanges();
-      });
-  }
-
-  ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    observer.observe(this.el.nativeElement); // Beobachte das Haupt-Element
   }
 }

@@ -14,7 +14,7 @@
     />
 
     <div class="slider">
-      <div class="infoBox">
+      <div class="infoBox" [ngClass]="{ active: isVisible }">
         <div class="innerBox">
           <h2 class="fontSyne disableTextSelection">El pollo loco</h2>
           <h3 class="fontOverpass disableTextSelection">
@@ -42,8 +42,8 @@
         </div>
       </div>
 
-      <div class="rectangle">
-        <div class="hoverArrow"></div>
+      <div class="rectangle" [ngClass]="{ active: isVisible }">
+        <div class="hoverArrow" [ngClass]="{ active: isVisible }"></div>
       </div>
     </div>
   </div>
